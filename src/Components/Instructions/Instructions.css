@@ -1,0 +1,299 @@
+:root {
+    --primary-color: #2c3e50;
+    --secondary-color: #3498db;
+    --accent-color: #e74c3c;
+    --background-gradient: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    --box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+  }
+  .instructions-container {
+    width: 90vw;
+    max-width: 90rem;
+    margin: 7rem auto;
+    background: var(--background-gradient);
+    border-radius: 2rem;
+    box-shadow: var(--box-shadow);
+    overflow: hidden;
+  }
+  
+  .instructions-header {
+    background: var(--primary-color);
+    color: white;
+    padding: 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+  }
+
+  
+  .instructions-heading {
+    margin: 0;
+    font-size: 2.2rem;
+    font-weight: 600;
+    text-align: center;
+  }
+  
+  .instructions-content {
+    padding: 2rem;
+  }
+  
+  .calculation-section {
+    background: white;
+    border-radius: 15px;
+    padding: 2rem;
+    margin: 2rem 0;
+    box-shadow: var(--box-shadow);
+  }
+  
+  .calculation-section h2 {
+    color: var(--primary-color);
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  .icon {
+    font-size: 1.5em;
+  }
+  
+  .guide-content {
+    display: grid;
+    gap: 2rem;
+  }
+  
+  .steps ol, .steps ul {
+    line-height: 1.8;
+    padding-left: 1.8rem;
+  }
+  
+  .steps li {
+    margin-bottom: 1rem;
+  }
+  
+  .grid-2col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin-top: 1rem;
+  }
+  
+  .do-dont {
+    background: #f8f9fa;
+    padding: 1.5rem;
+    border-radius: 10px;
+  }
+  
+  .do h4, .dont h4 {
+    margin-top: 0;
+    font-size: 1.2rem;
+  }
+  
+  .do {
+    color: #27ae60;
+  }
+  
+  .dont {
+    color: var(--accent-color);
+  }
+  
+  .footnote {
+    font-size: 0.9em;
+    color: #7f8c8d;
+    margin-top: 1rem;
+  }
+  
+  .grade-scheme {
+    margin-top: 3rem;
+  }
+  
+  .grade-columns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-top: 1.5rem;
+  }
+  
+  .grade-table {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  th {
+    background: var(--secondary-color);
+    color: white;
+    padding: 1rem;
+    font-weight: 600;
+    text-align: left;
+  }
+  
+  td {
+    padding: 0.8rem;
+    border-bottom: 1px solid #ecf0f1;
+  }
+  
+  tr:hover {
+    background-color: #f8f9fa;
+  }
+  
+  .important-note {
+    color: var(--accent-color);
+    font-weight: 600;
+    background: #fcefec;
+    padding: 1rem;
+    border-radius: 8px;
+    margin: 1rem 0;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 1200px) {
+    .instructions-container {
+      width: 95%;
+    }
+  }
+  
+  @media (max-width: 992px) {
+    .grade-columns {
+      grid-template-columns: 1fr;
+    }
+    
+    .grid-2col {
+      grid-template-columns: 1fr;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .instructions-header {
+      padding: 1.5rem;
+    }
+    
+    .instructions-heading {
+      font-size: 1.8rem;
+    }
+    
+    .calculation-section {
+      padding: 1.5rem;
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .instructions-container {
+      width: 100%;
+      border-radius: 0;
+      margin: 0;
+    }
+    
+    .instructions-header {
+      flex-direction: column;
+      text-align: center;
+    }
+    
+    .grade-table table {
+      font-size: 0.9rem;
+    }
+    
+    td {
+      padding: 0.6rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .instructions-content {
+      padding: 1rem;
+    }
+    
+    .calculation-section h2 {
+      font-size: 1.5rem;
+    }
+    
+    .steps ol, .steps ul {
+      padding-left: 1.2rem;
+    }
+  }
+  
+  
+  .header-icon {
+    font-size: 3.5rem;
+    filter: drop-shadow(0 0.125rem 0.25rem rgba(0,0,0,0.3));
+  }
+  
+  .instructions-heading {
+    margin: 0;
+    font-size: 2.8rem;
+    font-weight: 600;
+    text-align: center;
+  }
+  
+  .university-branding {
+    color: #8e44ad;
+    font-size: 1.6rem;
+    margin: 1.5rem 0;
+    text-align: center;
+    font-weight: 600;
+  }
+  
+  /* ... (keep other CSS rules same as previous version) ... */
+  
+  /* Responsive Design */
+  @media (max-width: 1200px) {
+    .instructions-container {
+      width: 99vw;
+    }
+    
+    .instructions-heading {
+      font-size: 2.4rem;
+    }
+  }
+  
+  @media (max-width: 992px) {
+    .header-icon {
+      font-size: 2.8rem;
+    }
+    
+    .instructions-heading {
+      font-size: 2rem;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .instructions-container {
+      width: 100vw;
+      border-radius: 0;
+    }
+    
+    .instructions-header {
+      padding: 1.8rem;
+    }
+    
+    .university-branding {
+      font-size: 1.4rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .instructions-heading {
+      font-size: 1.8rem;
+    }
+    
+    .calculation-section h2 {
+      font-size: 1.6rem;
+    }
+    
+    th {
+      padding: 1rem;
+      font-size: 1rem;
+    }
+    
+    td {
+      padding: 0.8rem;
+      font-size: 0.9rem;
+    }
+  }

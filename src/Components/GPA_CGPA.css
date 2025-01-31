@@ -1,0 +1,291 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  /* body {
+    background: linear-gradient(135deg, #e3fdfd, #ffe6fa);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow-x: hidden;
+  
+  } */
+  
+  .gpa_container ,.cgpa_container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    background: #ffffff;
+    padding: 50px;
+    margin-top: 100px;
+    max-width: 70vw;
+    position: absolute;
+    left: 0px;
+  }
+  
+  h3 {
+    /* position: fixed; */
+    text-align: center;
+    color: #8e44ad;
+    margin-bottom: 25px;
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  
+  .subjects_container ,.semester_container{
+    margin-bottom: 30px;
+  }
+  
+  .subjects ,.semesters{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    background: #fef9ff;
+    padding: 25px;
+    border-radius: 15px;
+    border: 1px solid #f0e6f9;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.05);
+    animation: slideInUp 0.5s ease-out;
+    margin-bottom: 20px;
+  }
+  
+  .subject_input,
+  .marks_input,
+  .credit_hours_input ,.gpa_input{
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #f0c7ff;
+    border-radius: 10px;
+    font-size: 0.9rem;
+    background: linear-gradient(to right, #ffffff, #fcf1ff);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .subject_input:focus,
+  .marks_input:focus,
+  .credit_hours_input:focus,
+  .gpa_input:focus{
+    outline: none;
+    border-color: #9b59b6;
+    box-shadow: 0 0 6px rgba(155, 89, 182, 0.4);
+  }
+  
+  .delete_button,.get_gpa{
+    flex: none;
+    padding: 10px 14px;
+    background: linear-gradient(to right, #070707, #434242);
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .get_gpa{
+    background: linear-gradient(to right,black,red);
+  }
+  
+  .delete_button:hover,.get_gpa:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  }
+  
+  .delete_button:active ,.get_gpa:active{
+    transform: translateY(2px);
+  }
+  
+  
+  .add_subject_button,
+  .add_semester_button,
+  .calculate_button ,.reset_button ,.goTo_cgpa{
+    display: inline-block;
+    margin: 15px auto;
+    padding: 12px 26px;
+    background: linear-gradient(to right, #6c5ce7, #4834d4);
+    color: #fff;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    transition: transform 0.3s ease, background 0.3s ease;
+  }
+  .goTo_cgpa{
+    background: linear-gradient(to right, grey,black);
+  }
+  .reset_button,.add_semester_button,.add_subject_button{
+    background: linear-gradient(to right, #fb0105, #242525);;
+  }
+  
+  .add_subject_button:hover,
+  .add_semester_button:hover,
+  .calculate_button:hover ,.reset_button:hover{
+    background: linear-gradient(to right, #4834d4, #2c3a91);
+    transform: scale(1.05);
+  }
+  
+  .add_subject_button:active,
+  .add_semester_button:active,
+  .calculate_button:active ,.reset_button:active{
+    transform: scale(0.95);
+  }
+  
+  .button_container {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+    margin-top: 25px;
+  }
+  
+  /* .progress_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position:sticky;
+    width: 80%;
+    height: 30px;
+     background-color: #f0f0f0; 
+    border-radius: 15px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+    margin-left: 10px;
+    background: #ffffff;
+  }
+   */
+  @media (max-width: 768px) {
+    .gpa_container ,.cgpa_container{
+      flex-direction: column;
+    }
+  
+    .gpa_calculation_section,
+    .cgpa_calculation_section,
+    .progress_container {
+      flex: 100%;
+    }
+  
+    .subjects .semesters{
+      flex-direction: column;
+    }
+  
+    .add_subject_button,
+    .add_semester_button,
+    .calculate_button {
+      width: 100%;
+    }
+  
+    .subject_input,
+    .gpa_input,
+    .marks_input,
+    .credit_hours_input {
+      flex: 100%;
+    }
+  }
+  
+  @media (max-width: 600px) {
+    .gpa_container ,.cgpa_container{
+      padding: 25px;
+    }
+  
+    h3 {
+      font-size: 1.9rem;
+    }
+  
+    .subject_input,
+    .gpa_input,
+    .marks_input,
+    .credit_hours_input {
+      font-size: 0.95rem;
+      padding: 10px;
+    }
+  
+    .add_subject_button,
+    .add_semester_button,
+    .calculate_button {
+      font-size: 1.1rem;
+      padding: 12px 25px;
+    }
+  }
+  
+  @media (max-width: 500px) {
+    .gpa_container ,.cgpa_container{
+      width: 95%;
+    }
+  
+    h3 {
+      font-size: 1.7rem;
+    }
+  
+    .add_subject_button,
+    .add_semester_button,
+    .calculate_button {
+      padding: 10px 20px;
+    }
+  
+    .subjects ,.semesters {
+      gap: 12px;
+      padding: 20px;
+    }
+  
+    .subject_input,
+    .gpa_input,
+    .marks_input,
+    .credit_hours_input {
+      padding: 8px;
+    }
+  }
+  
+  @media (max-width: 400px) {
+    .gpa_container ,.cgpa_container{
+      padding: 20px;
+    }
+  
+    h3 {
+      font-size: 1.4rem;
+    }
+  
+    .subject_input,
+    .gpa_input,
+    .marks_input,
+    .credit_hours_input {
+      font-size: 0.8rem;
+      padding: 5px;
+    }
+  
+    button {
+      font-size: 0.9rem;
+      padding: 10px 16px;
+    }
+  
+    .button-container {
+      gap: 10px;
+    }
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: scale(0.9);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  
+  @keyframes slideInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  
+  
+  
