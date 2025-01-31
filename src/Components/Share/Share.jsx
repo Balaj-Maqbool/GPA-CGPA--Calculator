@@ -15,7 +15,7 @@ const Share = () => {
   const [isCopied, setIsCopied] = useState(false);
   
   // Replace with your actual project URL
-  const projectUrl = 'https://your-project-url.com';
+  const projectUrl = 'https://gpa-cgpa-calculator-by-balaj-maqbool.vercel.app/';
   const projectName = 'GPA/CGPA Calculator';
 
   const shareOptions = [
