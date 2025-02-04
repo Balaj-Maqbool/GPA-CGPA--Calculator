@@ -1,63 +1,63 @@
-import { useState } from 'react';
-import { 
-  FaWhatsapp, 
-  FaFacebook, 
-  FaTwitter, 
-  FaLinkedin, 
+import { useState } from "react";
+import {
+  FaWhatsapp,
+  FaFacebook,
+  FaTwitter,
+  FaLinkedin,
   FaLink,
-  FaShare
-} from 'react-icons/fa';
-import { MdEmail } from 'react-icons/md';
-import './Share.css';
+  FaShare,
+} from "react-icons/fa";
+import { MdEmail } from "react-icons/md";
+import "./Share.css";
 
 const Share = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isCopied, setIsCopied] = useState(false);
-  
+
   // Replace with your actual project URL
-  const projectUrl = 'https://gpa-cgpa-calculator-by-balaj-maqbool.vercel.app/';
-  const projectName = 'GPA/CGPA Calculator';
+  const projectUrl = "https://gpa-cgpa-calculator-by-balaj-maqbool.vercel.app/";
+  const projectName = "GPA/CGPA Calculator";
 
   const shareOptions = [
     {
-      name: 'WhatsApp',
+      name: "WhatsApp",
       icon: <FaWhatsapp className="share-icon" />,
-      action: `https://api.whatsapp.com/send?text=Check%20out%20this%20awesome%20${projectName}%20${projectUrl}`
+      action: `https://api.whatsapp.com/send?text=Check%20out%20this%20awesome%20${projectName}%20${projectUrl}`,
     },
     {
-      name: 'Facebook',
+      name: "Facebook",
       icon: <FaFacebook className="share-icon" />,
-      action: `https://www.facebook.com/sharer/sharer.php?u=${projectUrl}`
+      action: `https://www.facebook.com/sharer/sharer.php?u=${projectUrl}`,
     },
     {
-      name: 'Twitter',
+      name: "Twitter",
       icon: <FaTwitter className="share-icon" />,
-      action: `https://twitter.com/intent/tweet?text=Check%20out%20this%20awesome%20${projectName}&url=${projectUrl}`
+      action: `https://twitter.com/intent/tweet?text=Check%20out%20this%20awesome%20${projectName}&url=${projectUrl}`,
     },
     {
-      name: 'LinkedIn',
+      name: "LinkedIn",
       icon: <FaLinkedin className="share-icon" />,
-      action: `https://www.linkedin.com/shareArticle?mini=true&url=${projectUrl}&title=${projectName}`
+      action: `https://www.linkedin.com/shareArticle?mini=true&url=${projectUrl}&title=${projectName}`,
     },
     {
-      name: 'Email',
+      name: "Email",
       icon: <MdEmail className="share-icon" />,
-      action: `mailto:?subject=Check%20out%20${projectName}&body=Here's%20an%20awesome%20${projectName}:%20${projectUrl}`
+      action: `mailto:?subject=Check%20out%20${projectName}&body=Here's%20an%20awesome%20${projectName}:%20${projectUrl}`,
     },
     {
-      name: 'Copy Link',
+      name: "Copy Link",
       icon: <FaLink className="share-icon" />,
-      action: 'copy'
-    }
+      action: "copy",
+    },
   ];
 
   const handleShare = (action) => {
-    if (action === 'copy') {
+    if (action === "copy") {
       navigator.clipboard.writeText(projectUrl);
       setIsCopied(true);
       setTimeout(() => setIsCopied(false), 2000);
     } else {
-      window.open(action, '_blank');
+      window.open(action, "_blank");
     }
   };
 
@@ -65,10 +65,13 @@ const Share = () => {
     <div className="share-container">
       <div className="share-message">
         <h2>Help Others Succeed! 🎓</h2>
-        <p>Share this GPA/CGPA Calculator with your friends and classmates to help them track their academic progress!</p>
+        <p>
+          Share this GPA/CGPA Calculator with your friends and classmates to
+          help them track their academic progress!
+        </p>
       </div>
 
-      <div 
+      <div
         className="share-trigger"
         onMouseEnter={() => setIsMenuOpen(true)}
         onMouseLeave={() => setIsMenuOpen(false)}
@@ -76,9 +79,9 @@ const Share = () => {
       >
         <FaShare className="share-main-icon" />
         Share Now
-        <div className={`share-menu ${isMenuOpen ? 'open' : ''}`}>
+        <div className={`share-menu ${isMenuOpen ? "open" : ""}`}>
           {shareOptions.map((option, index) => (
-            <div 
+            <div
               key={option.name}
               className="share-item"
               onClick={() => handleShare(option.action)}

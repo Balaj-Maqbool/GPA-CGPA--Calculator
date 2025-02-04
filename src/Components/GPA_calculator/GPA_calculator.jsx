@@ -9,7 +9,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 
 const GPA_calculator = () => {
   const [GPA, setGPA] = useState({ gpa: "", gpa_percentage: "" });
-
+  const [emptyFields, setEmptyFields] = useState(true);
   const [subjects, setSubjects] = useState([
     {
       id: uuidv4(),
@@ -49,7 +49,7 @@ const GPA_calculator = () => {
 
   const saveToLocalStorage = () => {
     console.log("saving.............................");
-    if (subjects?.length > 1) {
+    if (subjects?.length >= 0) {
       localStorage.setItem("subjects", JSON.stringify(subjects));
     }
     if (GPA) {
@@ -60,6 +60,9 @@ const GPA_calculator = () => {
     const timeOut = setTimeout(() => {
       saveToLocalStorage();
     }, 300);
+    console.log(subjects);
+    console.log(GPA);
+    checkAllFields();
     return () => {
       // console.log(timeOut)
       clearTimeout(timeOut);
@@ -112,47 +115,58 @@ const GPA_calculator = () => {
     let gradePoint = gradePoint_obj?.gradePoint ?? 0;
     return gradePoint;
   };
-
-  const Calculation = () => {
-    let totalQualityPoints = 0;
-    let totalCreditHours = 0;
-
-    const updatedSubjects = subjects?.map((sub) => {
-      let tMarks = Number(sub?.total_marks || 100);
-      let oMarks = Number(sub?.obtained_marks || 0);
-      let creditHours = Number(sub?.credit_hours);
-
-      const percentage = Math.round(getPercentage(tMarks, oMarks));
-      const gradePoint = getGradePoints(percentage);
-      const qualityPoint = creditHours * gradePoint;
-
-      totalQualityPoints += qualityPoint;
-      totalCreditHours += creditHours;
-
-      return {
-        ...sub,
-        percentage: Number(percentage) || 0,
-        grade_point: Number(gradePoint) || 0,
-        quality_point: Number(qualityPoint) || 0,
-      };
+  const checkAllFields = () => {
+    subjects.forEach((sub) => {
+      if (sub.obtained_marks === "" || sub.credit_hours === "") {
+        setEmptyFields(true);
+      } else {
+        setEmptyFields(false);
+      }
     });
-
-    const result =
-      totalCreditHours > 0 ? Number(totalQualityPoints / totalCreditHours) : 0;
-    const percent = (result / 4) * 100;
-    setGPA({
-      gpa: result.toFixed(2),
-      gpa_percentage: percent,
-      total_credit_hours: totalCreditHours,
-    });
-
-    setSubjects(updatedSubjects);
+    console.log("field check", emptyFields);
   };
+  const Calculation = () => {
+    if (emptyFields === false) {
+      let totalQualityPoints = 0;
+      let totalCreditHours = 0;
 
-  useEffect(() => {
-    console.log(subjects);
-    console.log(GPA);
-  }, [subjects, GPA]);
+      const updatedSubjects = subjects?.map((sub) => {
+        let tMarks = Number(sub?.total_marks || 100);
+        let oMarks = Number(sub?.obtained_marks || 0);
+        let creditHours = Number(sub?.credit_hours);
+
+        const percentage = Math.round(getPercentage(tMarks, oMarks));
+        const gradePoint = getGradePoints(percentage);
+        const qualityPoint = creditHours * gradePoint;
+
+        totalQualityPoints += qualityPoint;
+        totalCreditHours += creditHours;
+
+        return {
+          ...sub,
+          percentage: Number(percentage) || 0,
+          grade_point: Number(gradePoint) || 0,
+          quality_point: Number(qualityPoint) || 0,
+        };
+      });
+
+      const result =
+        totalCreditHours > 0
+          ? Number(totalQualityPoints / totalCreditHours)
+          : 0;
+      const percent = (result / 4) * 100;
+      setGPA({
+        gpa: result.toFixed(2),
+        gpa_percentage: percent,
+        total_credit_hours: totalCreditHours,
+      });
+
+      setSubjects(updatedSubjects);
+    } else {
+      setGPA({});
+      alert("Empty Fields");
+    }
+  };
 
   const location = useLocation();
   const navigateTo = useNavigate();
@@ -245,16 +259,6 @@ const GPA_calculator = () => {
                     }}
                   /> */}
                     <input
-                      className="marks_input"
-                      type="number"
-                      placeholder="Obtained Marks "
-                      value={sub.obtained_marks}
-                      onChange={(e) => {
-                        const value = e?.target?.value ?? "";
-                        handleInputChange(sub.id, "obtained_marks", value);
-                      }}
-                    />
-                    <input
                       className="credit_hours_input"
                       type="number"
                       placeholder="Credit Hours"
@@ -262,6 +266,16 @@ const GPA_calculator = () => {
                       onChange={(e) => {
                         const value = e?.target?.value || "";
                         handleInputChange(sub.id, "credit_hours", value);
+                      }}
+                    />
+                    <input
+                      className="marks_input"
+                      type="number"
+                      placeholder="Obtained Marks "
+                      value={sub.obtained_marks}
+                      onChange={(e) => {
+                        const value = e?.target?.value ?? "";
+                        handleInputChange(sub.id, "obtained_marks", value);
                       }}
                     />
                     <button

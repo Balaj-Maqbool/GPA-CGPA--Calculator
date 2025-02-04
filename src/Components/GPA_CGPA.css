@@ -37,33 +37,33 @@
     font-weight: bold;
   }
   
-  .subjects_container ,.semester_container{
-    margin-bottom: 30px;
-  }
-  
   .subjects ,.semesters{
     display: flex;
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 10px;
     background: #fef9ff;
-    padding: 25px;
-    border-radius: 15px;
+    padding: 20px;
+    border-radius: 10px;
     border: 1px solid #f0e6f9;
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.05);
     animation: slideInUp 0.5s ease-out;
-    margin-bottom: 20px;
+    margin-bottom: 5px;
+  }
+  .semesters{
+    padding: 10px;
   }
   
   .subject_input,
   .marks_input,
   .credit_hours_input ,.gpa_input{
     flex: 1;
-    padding: 10px;
+    padding: 8px;
     border: 1px solid #f0c7ff;
     border-radius: 10px;
     font-size: 0.9rem;
     background: linear-gradient(to right, #ffffff, #fcf1ff);
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    height: 40px;
   }
   
   .subject_input:focus,
@@ -76,7 +76,7 @@
   }
   
   .delete_button,.get_gpa{
-    flex: none;
+    flex: .01;
     padding: 10px 14px;
     background: linear-gradient(to right, #070707, #434242);
     color: #fff;
@@ -85,9 +85,12 @@
     cursor: pointer;
     font-size: 0.9rem;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 40px;
   }
   .get_gpa{
     background: linear-gradient(to right,black,red);
+    font-size: 0.6rem;
+    
   }
   
   .delete_button:hover,.get_gpa:hover {
@@ -97,6 +100,7 @@
   
   .delete_button:active ,.get_gpa:active{
     transform: translateY(2px);
+    
   }
   
   

@@ -8,6 +8,7 @@ import About from "./Components/About/About";
 import Instructions from "./Components/Instructions/Instructions";
 
 import { Routes, Route } from "react-router-dom";
+import LowerNavbar from "./Components/Navbar/LowerNavbar";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
           element={
             <>
               <Navbar />
+              <LowerNavbar/>
               <GPA_calculator />
             </>
           }
@@ -27,6 +29,7 @@ function App() {
           element={
             <>
               <Navbar />
+              <LowerNavbar/>
               <GPA_calculator />
             </>
           }
@@ -36,6 +39,7 @@ function App() {
           element={
             <>
               <Navbar />
+              <LowerNavbar/>
               <CGPA />
             </>
           }
