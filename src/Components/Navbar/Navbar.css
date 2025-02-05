@@ -6,7 +6,7 @@
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 100;
+  z-index: 1;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   height: 14vh;
   display: flex;
@@ -80,14 +80,14 @@
 /* 🔸 Lower Navbar (Always Right Below Main Navbar) */
 .lower-navbar {
   position: fixed;
-  top: 14vh; /* Ensures it sits right below the main navbar */
+  top: 17vh; /* Ensurs it sits right below the main navbar */
   width: 100vw;
   background: rgb(208, 241, 252);
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 8vh;
-  z-index: 100; 
+  z-index: 0; 
 }
 
 .lower-navbar .navbar_links {
@@ -161,13 +161,14 @@
     height: 11vh;
   }
   .lower-navbar {
-    height: 5vh;
+    height: 7vh;
+    top: 14.5vh;
   }
   .navbar_title {
     font-size: 1.5rem;
   }
   .right {
-    display: block;
+    display: inline-block;
   }
   .left {
     display: none;
