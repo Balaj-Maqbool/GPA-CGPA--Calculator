@@ -1,19 +1,33 @@
+/* Default Styles (for desktops) */
 .navbar {
-  width: 100vw;
+  min-width: 100%;
   background: linear-gradient(to right, #2c3e50, #4ca1af);
-  padding: 15px 20px 50px 10px;
+  padding: 15px 20px;
   position: fixed;
   top: 0;
   left: 0;
   z-index: 100;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   height: 14vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Ensuring Menu Stays at Top Right */
+.right {
+  position: absolute;
+  top: 50%;
+  right: 50px;
+  transform: translateY(-50%);
+  display: none;
 }
 
 .navbar_container {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  width: 100%;
   max-width: 1200px;
   margin: 0 auto;
 }
@@ -24,7 +38,6 @@
   font-family: "Poppins", sans-serif;
   font-weight: 700;
   text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
-  margin: 0px 100px 0px 0px;
 }
 
 .navbar_links {
@@ -64,43 +77,168 @@
   border: 2px solid #e30303;
 }
 
+/* 🔸 Lower Navbar (Always Right Below Main Navbar) */
 .lower-navbar {
   position: fixed;
+  top: 14vh; /* Ensures it sits right below the main navbar */
   width: 100vw;
-  z-index: 2;
   background: rgb(208, 241, 252);
-  margin-top: 14vh;
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
-  height: 8vh;
+  min-height: 8vh;
+  z-index: 100; 
 }
+
+.lower-navbar .navbar_links {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
 .lower-navbar .navbar_links a {
   color: rgb(11, 11, 11);
   font-weight: 600;
+  font-size: 1.2rem;
+  padding: 8px 15px;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
 }
+
+.lower-navbar .navbar_links a:hover {
+  background: rgba(0, 0, 0, 0.1);
+}
+
 .lower-active {
   background: rgb(176, 233, 252);
   font-weight: 600;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
   border: 2px solid #e30303;
 }
+
 .slash {
   font-weight: 700;
+  font-size: 1.5rem;
+  color: #333;
+  margin: 0 10px;
 }
-.right {
-  border: 2px solid rgb(197, 195, 195);
-  height: 25px;
-  padding: 2px;
-  font-weight: 700;
-  color: #f5f5f5;
-  display: none;
+
+/* 🔹 Responsive Design for Different Screen Sizes */
+
+/* 🔸 Large Screens (≥ 1200px) */
+@media (max-width: 1200px) {
+  .navbar_title {
+    font-size: 1.8rem;
+  }
+  .navbar_links a {
+    font-size: 1.1rem;
+    padding: 8px 16px;
+  }
 }
-@media (max-width: 900px) {
+
+/* 🔸 Medium Screens (≥ 992px) */
+@media (max-width: 992px) {
+  .navbar {
+    height: 12vh;
+  }
+  .lower-navbar {
+    height: 5.5vh;
+  }
+  .navbar_title {
+    font-size: 1.6rem;
+  }
+  .navbar_links a {
+    font-size: 1rem;
+    padding: 7px 14px;
+  }
+}
+
+/* 🔸 Tablets (≥ 768px) */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 10px 15px;
+    height: 11vh;
+  }
+  .lower-navbar {
+    height: 5vh;
+  }
+  .navbar_title {
+    font-size: 1.5rem;
+  }
+  .right {
+    display: block;
+  }
   .left {
     display: none;
   }
+}
+
+/* 🔸 Mobile Landscape (≥ 576px) */
+@media (max-width: 576px) {
+  .navbar {
+    height: 10vh;
+  }
+  .navbar_title {
+    font-size: 1.4rem;
+  }
+  .lower-navbar {
+    height: 5vh;
+    top: 11vh;
+  }
+}
+
+/* 🔸 Mobile Portrait (≤ 575px) */
+@media (max-width: 575px) {
+  .navbar {
+    height: 9vh;
+  }
+  .navbar_title {
+    font-size: 1rem;
+  }
   .right {
     display: inline-block;
+    /* right: 50px; */
+  }
+  .left {
+    display: none;
+  }
+  .lower-navbar {
+    height: 4vh;
+  }
+  .slash {
+    font-size: 1.3rem;
+    margin: 0 6px;
+  }
+  .lower-navbar .navbar_links a {
+    font-size: 1rem;
+    padding: 6px 12px;
+  }
+}
+
+/* 🔸 Extra Small Screens (≤ 400px) */
+@media (max-width: 400px) {
+  .navbar {
+    padding: 8px 10px;
+    height: 8vh;
+    width: 100%
+  }
+  .navbar_title {
+    font-size: 1rem;
+  }
+  .right {
+    right: 2rem;
+  }
+  .lower-navbar {
+    height: 3.8vh;
+    width: 70vh;
+  }
+  .slash {
+    font-size: 1.2rem;
+    margin: 0 4px;
+  }
+  .lower-navbar .navbar_links a {
+    font-size: 0.9rem;
+    padding: 5px 10px;
   }
 }

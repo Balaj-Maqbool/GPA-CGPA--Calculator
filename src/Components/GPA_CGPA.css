@@ -1,21 +1,4 @@
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Arial', sans-serif;
-  }
-  
-  /* body {
-    background: linear-gradient(135deg, #e3fdfd, #ffe6fa);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    overflow-x: hidden;
-  
-  } */
-  
   .gpa_container ,.cgpa_container {
     display: flex;
     justify-content: space-between;
@@ -23,7 +6,7 @@
     background: #ffffff;
     padding: 50px;
     margin-top: 100px;
-    max-width: 70vw;
+    max-width: 65vw;
     position: absolute;
     left: 0px;
   }
@@ -144,24 +127,11 @@
     gap: 20px;
     margin-top: 25px;
   }
-  
-  /* .progress_container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position:sticky;
-    width: 80%;
-    height: 30px;
-     background-color: #f0f0f0; 
-    border-radius: 15px;
-    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
-    margin-left: 10px;
-    background: #ffffff;
-  }
-   */
+   
   @media (max-width: 768px) {
     .gpa_container ,.cgpa_container{
       flex-direction: column;
+      max-width: 100vw;
     }
   
     .gpa_calculation_section,
@@ -215,7 +185,7 @@
   
   @media (max-width: 500px) {
     .gpa_container ,.cgpa_container{
-      width: 95%;
+      min-width: 80vw;
     }
   
     h3 {
@@ -244,6 +214,7 @@
   @media (max-width: 400px) {
     .gpa_container ,.cgpa_container{
       padding: 20px;
+      min-width: 90vw;
     }
   
     h3 {

@@ -1,4 +1,4 @@
-import "./App.css";
+// import "./App.css";
 import Navbar from "./Components/Navbar/Navbar";
 import GPA_calculator from "./Components/GPA_calculator/GPA_calculator";
 import CGPA from "./Components/CGPA_calculator/CGPA";
