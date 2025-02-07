@@ -1,6 +1,6 @@
 /* Default Styles (for desktops) */
 .navbar {
-  min-width: 100%;
+  width: 100%;
   background: linear-gradient(to right, #2c3e50, #4ca1af);
   padding: 15px 20px;
   position: fixed;
@@ -18,8 +18,7 @@
 .right {
   position: relative;
   right: 50px;
-  /* visibility: hidden ; */
-  display: none;
+  visibility: hidden ;
 }
 
 .navbar_container {
@@ -27,7 +26,7 @@
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  /* max-width: 1200px; */
+  max-width: 1200px;
   margin: 0 auto;
 }
 
@@ -80,7 +79,7 @@
 .lower-navbar {
   position: relative;
   top: 17vh; /* Ensurs it sits right below the main navbar */
-  width: 100vw;
+  width: 100%;
   /* background: rgb(208, 241, 252); */
   display: flex;
   justify-content: center;
@@ -170,7 +169,7 @@
   }
   .right {
     display: inline-block;
-    /* visibility: visible; */
+    visibility: visible;
   }
   .left {
     display: none;

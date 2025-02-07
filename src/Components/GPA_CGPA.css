@@ -1,5 +1,6 @@
 
   .gpa_container ,.cgpa_container {
+    width: 100%;
     display: flex;
     justify-content: space-between;
     gap: 20px;
@@ -130,7 +131,7 @@
   @media (max-width: 768px) {
     .gpa_container ,.cgpa_container{
       flex-direction: column;
-      max-width: 100vw;
+      width: 100vw;
     }
   
     .gpa_calculation_section,
