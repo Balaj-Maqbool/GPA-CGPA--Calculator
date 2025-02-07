@@ -18,7 +18,8 @@
 .right {
   position: relative;
   right: 50px;
-  visibility: hidden ;
+  /* visibility: hidden ; */
+  display: none;
 }
 
 .navbar_container {
@@ -26,7 +27,7 @@
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  max-width: 1200px;
+  /* max-width: 1200px; */
   margin: 0 auto;
 }
 
@@ -169,7 +170,7 @@
   }
   .right {
     display: inline-block;
-    visibility: visible;
+    /* visibility: visible; */
   }
   .left {
     display: none;
