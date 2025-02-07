@@ -79,7 +79,6 @@
 .lower-navbar {
   position: relative;
   top: 17vh; 
-  /* background: rgb(208, 241, 252); */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -161,7 +160,7 @@
   }
   .lower-navbar {
     height: 7vh;
-    top: 14.5vh;
+    /* top: 14.5vh; */
   }
   .navbar_title {
     font-size: 1.5rem;
@@ -185,7 +184,7 @@
   }
   .lower-navbar {
     height: 5vh;
-    top: 11vh;
+    /* top: 11vh; */
   }
 }
 
