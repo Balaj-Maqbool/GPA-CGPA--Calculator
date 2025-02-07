@@ -78,8 +78,7 @@
 /* 🔸 Lower Navbar (Always Right Below Main Navbar) */
 .lower-navbar {
   position: relative;
-  top: 17vh; /* Ensurs it sits right below the main navbar */
-  width: 100%;
+  top: 17vh; 
   /* background: rgb(208, 241, 252); */
   display: flex;
   justify-content: center;

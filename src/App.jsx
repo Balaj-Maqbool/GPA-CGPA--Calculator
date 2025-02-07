@@ -19,7 +19,7 @@ function App() {
           element={
             <>
               <Navbar />
-              {/* <LowerNavbar/> */}
+              <LowerNavbar/>
               <GPA_calculator />
             </>
           }
