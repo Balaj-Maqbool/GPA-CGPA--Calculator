@@ -24,6 +24,7 @@ const LowerNavbar = () => {
           </NavLink>
         </li>
       </ul>
+      <div className="empty-container"></div>
     </nav>
   );
 };

@@ -38,11 +38,6 @@ const Contact = () => {
       url: "https://wa.me/923252624261",
       icon: <FaWhatsapp className="social-icon" aria-hidden="true" />,
     },
-    {
-      name: "Instagram",
-      url: "#",
-      icon: <FaInstagram className="social-icon" aria-hidden="true" />,
-    },
   ];
 
   const handleLinkClick = (url) => {
@@ -55,7 +50,6 @@ const Contact = () => {
         <h1>Balaj Maqbool</h1>
         <p>Full-stack developer | Turning ideas into digital reality</p>
       </div>
-
       <div
         className="contact-trigger"
         onMouseEnter={() => setIsMenuOpen(true)}

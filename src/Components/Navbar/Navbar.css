@@ -8,7 +8,7 @@
   left: 0;
   z-index: 1;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  height: 14vh;
+  height: 10vh;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -16,11 +16,9 @@
 
 /* Ensuring Menu Stays at Top Right */
 .right {
-  position: absolute;
-  top: 50%;
+  position: relative;
   right: 50px;
-  transform: translateY(-50%);
-  display: none;
+  visibility: hidden ;
 }
 
 .navbar_container {
@@ -79,14 +77,14 @@
 
 /* 🔸 Lower Navbar (Always Right Below Main Navbar) */
 .lower-navbar {
-  position: fixed;
+  position: relative;
   top: 17vh; /* Ensurs it sits right below the main navbar */
   width: 100vw;
-  background: rgb(208, 241, 252);
+  /* background: rgb(208, 241, 252); */
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 8vh;
+  min-height: 10vh;
   z-index: 0; 
 }
 
@@ -111,10 +109,9 @@
 }
 
 .lower-active {
-  background: rgb(176, 233, 252);
+  background: rgb(152, 222, 246);
   font-weight: 600;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
-  border: 2px solid #e30303;
 }
 
 .slash {
@@ -122,6 +119,9 @@
   font-size: 1.5rem;
   color: #333;
   margin: 0 10px;
+}
+.empty-container{
+  width: 15%;
 }
 
 /* 🔹 Responsive Design for Different Screen Sizes */
@@ -169,6 +169,7 @@
   }
   .right {
     display: inline-block;
+    visibility: visible;
   }
   .left {
     display: none;

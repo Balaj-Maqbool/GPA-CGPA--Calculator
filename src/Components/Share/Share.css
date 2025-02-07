@@ -140,11 +140,7 @@
       font-size: 1.2rem;
       padding: 0.8rem 1.5rem;
     }
-  
-    .share-menu {
-      grid-template-columns: repeat(2, 1fr);
-      max-width: 300px;
-    }
+
   
     .share-icon {
       font-size: 1.8rem;
@@ -160,6 +156,17 @@
     .share-item {
       padding: 0.8rem;
     }
+    .share-menu {
+      grid-template-columns: repeat(3, 1fr); 
+      max-width: 300px;
+    }
+  }
+  @media (max-width:360px) {
+    .share-menu {
+      grid-template-columns: repeat(2, 1fr);
+      max-width: 220px; 
+    }
+    
   }
 
   

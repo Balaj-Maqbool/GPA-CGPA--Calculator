@@ -12,6 +12,7 @@ import "./About.css";
 const About = () => {
   return (
     <div className="about-container">
+      <div className="empty"></div>
       <header className="about-header">
         <h1>About GPA-CGPA Calculator</h1>
         <div className="header-gradient"></div>

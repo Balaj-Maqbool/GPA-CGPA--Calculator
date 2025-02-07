@@ -7,10 +7,11 @@
     background: #0f172a;
     color: white;
     text-align: center;
-    padding: 2rem;
+    padding: 0rem 1rem 5rem 1rem;
   }
   
   .intro {
+
     margin-bottom: 3rem;
   }
   
@@ -53,7 +54,8 @@
     top: 120%;
     left: 50%;
     transform: translateX(-50%);
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
     gap: 1.5rem;
     opacity: 0;
     visibility: hidden;
@@ -68,7 +70,7 @@
   .social-menu.open {
     opacity: 1;
     visibility: visible;
-    top: 140%;
+    bottom: 140%;
   }
   
   .social-item {
@@ -123,7 +125,6 @@
     }
   
     .social-menu {
-      flex-wrap: wrap;
       justify-content: center;
       max-width: 300px;
     }
