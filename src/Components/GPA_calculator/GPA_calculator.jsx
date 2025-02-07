@@ -318,7 +318,7 @@ const GPA_calculator = () => {
         </section>
       </div>
       <div className="gpa_calculation_right">
-        {GPA ? <ProgressBar GPA={GPA} /> : ""}
+        {/* {GPA ? <ProgressBar GPA={GPA} /> : ""} */}
       </div>
     </>
   );
