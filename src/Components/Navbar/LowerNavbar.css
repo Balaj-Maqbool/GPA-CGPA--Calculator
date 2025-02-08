@@ -43,13 +43,29 @@
     margin: 0 10px;
   }
   .empty-container{
-    width: 15%;
-    background-color: aquamarine;
+    width: auto;
   }
 
   @media (max-width:700px){
     .empty-container{
       display: none;
+    }
+    .lower-navbar{
+      top: 16vh;
+    }
+
+  }
+
+  @media (max-width:500px){
+    .lower-navbar{
+      top: 15vh;
+    }
+
+  }
+
+  @media (max-width:400px){
+    .lower-navbar{
+      top: 13vh;
     }
 
   }
