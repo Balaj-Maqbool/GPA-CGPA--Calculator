@@ -19,8 +19,7 @@ function App() {
           element={
             <>
               <Navbar />
-              {/* <LowerNavbar/> */}
-              {/* <GPA_calculator /> */}
+              <GPA_calculator />
             </>
           }
         />
@@ -29,7 +28,6 @@ function App() {
           element={
             <>
               <Navbar />
-              <LowerNavbar/>
               <GPA_calculator />
             </>
           }
@@ -39,7 +37,6 @@ function App() {
           element={
             <>
               <Navbar />
-              <LowerNavbar/>
               <CGPA />
             </>
           }
