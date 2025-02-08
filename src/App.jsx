@@ -12,15 +12,15 @@ import LowerNavbar from "./Components/Navbar/LowerNavbar";
 
 function App() {
   return (
-    <>
+    <><div style={{width:"100%"}}>
       <Routes>
         <Route
           path="/"
           element={
             <>
               <Navbar />
-              {/* <LowerNavbar/> */}
-              <GPA_calculator />
+              <LowerNavbar/>
+              {/* <GPA_calculator /> */}
             </>
           }
         />
@@ -81,6 +81,7 @@ function App() {
           }
         />
       </Routes>
+      </div>
     </>
   );
 }

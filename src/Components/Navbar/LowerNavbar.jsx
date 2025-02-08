@@ -1,5 +1,6 @@
 import React from "react";
-import "./Navbar.css";
+import "./LowerNavbar.css";
+import "./Navbar.css"
 import { NavLink } from "react-router-dom";
 
 const LowerNavbar = () => {
@@ -24,7 +25,7 @@ const LowerNavbar = () => {
           </NavLink>
         </li>
       </ul>
-      {/* <div className="empty-container"></div> */}
+      <div className="empty-container"></div>
     </nav>
   );
 };
