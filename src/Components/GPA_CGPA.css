@@ -1,23 +1,23 @@
 
   .gpa_container ,.cgpa_container {
-    width: 100%;
     display: flex;
     justify-content: space-between;
     gap: 20px;
     background: #ffffff;
     padding: 50px;
-    margin-top: 120px;
-    margin-bottom: 150px;
-    max-width: 65vw;
+    margin-top: 15vh;
+    margin-bottom: 17vh;
+    max-width: 62vw;
+    /* border: 1px solid black; */
+
   }
   
   h3 {
-    /* position: fixed; */
     text-align: center;
     color: #8e44ad;
-    margin-bottom: 25px;
     font-size: 1.5rem;
     font-weight: bold;
+    /* border: 1px solid greenyellow; */
   }
   
   .subjects ,.semesters{
@@ -28,8 +28,7 @@
     padding: 20px;
     border-radius: 10px;
     border: 1px solid #f0e6f9;
-    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.05);
-    animation: slideInUp 0.5s ease-out;
+    box-shadow: 0 3px 6px rgba(10, 10, 10, 0.05);
     margin-bottom: 5px;
   }
   .semesters{
@@ -42,11 +41,11 @@
     flex: 1;
     padding: 8px;
     border: 1px solid #f0c7ff;
-    border-radius: 10px;
+    border-radius: 12px;
     font-size: 0.9rem;
     background: linear-gradient(to right, #ffffff, #fcf1ff);
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
-    height: 40px;
+    height: 20px;
   }
   
   .subject_input:focus,
@@ -59,8 +58,8 @@
   }
   
   .delete_button,.get_gpa{
-    flex: .01;
-    padding: 10px 14px;
+    flex: 0;
+    padding: 9px 13px;
     background: linear-gradient(to right, #070707, #434242);
     color: #fff;
     border: none;
@@ -71,7 +70,6 @@
     height: 40px;
   }
   .get_gpa{
-    background: linear-gradient(to right,black,red);
     font-size: 0.6rem;
     
   }
@@ -79,6 +77,7 @@
   .delete_button:hover,.get_gpa:hover {
     transform: translateY(-4px);
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+    background: linear-gradient(to right, #b40e0e, #cb4545);
   }
   
   .delete_button:active ,.get_gpa:active{
@@ -90,10 +89,13 @@
   .add_subject_button,
   .add_semester_button,
   .calculate_button ,.reset_button ,.goTo_cgpa{
-    display: inline-block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
     margin: 15px auto;
     padding: 12px 26px;
-    background: linear-gradient(to right, #6c5ce7, #4834d4);
+    background: linear-gradient(to right, #219f40, #0e8f55);
     color: #fff;
     border: none;
     border-radius: 12px;
@@ -101,17 +103,23 @@
     font-size: 1.1rem;
     transition: transform 0.3s ease, background 0.3s ease;
   }
-  .goTo_cgpa{
-    background: linear-gradient(to right, grey,black);
+  .goTo_cgpa,.get_gpa{
+    background: linear-gradient(to right, rgb(155, 58, 193),rgb(109, 2, 109));
   }
-  .reset_button,.add_semester_button,.add_subject_button{
+  .reset_button{
     background: linear-gradient(to right, #fb0105, #242525);;
   }
-  
+  .add_subject_button,
+  .add_semester_button{
+    background: lightgray;
+    color:white;
+    border: 2px dashed whitesmoke;
+
+  }
   .add_subject_button:hover,
   .add_semester_button:hover,
   .calculate_button:hover ,.reset_button:hover{
-    background: linear-gradient(to right, #4834d4, #2c3a91);
+    background: linear-gradient(to right, #4199a6, #67d4b5);
     transform: scale(1.05);
   }
   
@@ -131,30 +139,10 @@
   @media (max-width: 768px) {
     .gpa_container ,.cgpa_container{
       flex-direction: column;
-      width: 100vw;
+      max-width: 100%;
     }
-  
-    .gpa_calculation_section,
-    .cgpa_calculation_section,
-    .progress_container {
-      flex: 100%;
-    }
-  
-    .subjects .semesters{
-      flex-direction: column;
-    }
-  
-    .add_subject_button,
-    .add_semester_button,
-    .calculate_button {
-      width: 100%;
-    }
-  
-    .subject_input,
-    .gpa_input,
-    .marks_input,
-    .credit_hours_input {
-      flex: 100%;
+    .delete_button{
+      flex: 0;
     }
   }
   
@@ -227,6 +215,7 @@
     .credit_hours_input {
       font-size: 0.8rem;
       padding: 5px;
+      border-radius: 9px;
     }
   
     button {

@@ -145,7 +145,7 @@ const CGPA = () => {
           <h3>CGPA Calculator</h3>
           <div className="cgpa_calculation_left">
             <div className="semester_container">
-              {semesters.map((semester) => {
+              {semesters.map((semester,index) => {
                 return (
                   <div className="semesters" key={semester.id}>
                     <input
@@ -173,6 +173,14 @@ const CGPA = () => {
                       }}
                     />
                     <button
+                      className="get_gpa"
+                      onClick={() => {
+                        getGPA(semester.id);
+                      }}
+                    >
+                      Get GPA 
+                    </button>
+                    <button
                       onClick={() => {
                         deleteSemester(semester.id);
                       }}
@@ -180,28 +188,22 @@ const CGPA = () => {
                     >
                       <ImCross />
                     </button>
-                    <button
-                      className="get_gpa"
-                      onClick={() => {
-                        getGPA(semester.id);
-                      }}
-                    >
-                      Get GPA
-                    </button>
-                  </div>
+                    </div>
                 );
               })}
+
             </div>
+            <button onClick={addSemester} className="add_semester_button">
+              <MdAddBox />
+            </button>
             <div className="button_container">
-              <button onClick={addSemester} className="add_semester_button">
-                <MdAddBox />
+              <button className="reset_button" onClick={handleRest}>
+                RESET
               </button>
               <button onClick={calculateCGPA} className="calculate_button">
                 Calculate CGPA
               </button>
-              <button className="reset_button" onClick={handleRest}>
-                RESET
-              </button>
+
             </div>
           </div>
         </section>

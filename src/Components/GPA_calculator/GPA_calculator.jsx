@@ -189,12 +189,12 @@ const GPA_calculator = () => {
     }
   }, [location.state, GPA]);
 
-  // useEffect(() => {
-  //   if (location?.state?.reset === true) {
-  //     handleReset();
-  //     location.state.reset = false;
-  //   }
-  // }, [location?.state]);
+  useEffect(() => {
+    if (location?.state?.reset === true) {
+      handleReset();
+      location.state.reset = false;
+    }
+  }, [location?.state]);
 
   const goToCGPA = () => {
     if (updatedSemesters?.length > 0) {
@@ -281,35 +281,34 @@ const GPA_calculator = () => {
                 );
               })}
             </div>
+            {location.state && GPA.gpa ? (
+              <button
+                className="goTo_cgpa"
+                onClick={() => {
+                  goToCGPA();
+                }}
+              >
+                Add to CGPA
+              </button>
+            ) : (
+              ""
+            )}
+            <button className="add_subject_button" onClick={addSubject}>
+              <MdAddBox />
+            </button>
             <div className="button_container">
-              <button className="add_subject_button" onClick={addSubject}>
-                <MdAddBox />
+              <button className="reset_button" onClick={handleReset}>
+                Reset
               </button>
               <button className="calculate_button" onClick={Calculation}>
                 Calculate GPA
               </button>
-              <button className="reset_button" onClick={handleReset}>
-                Reset
-              </button>
-
-              {location.state && GPA.gpa ? (
-                <button
-                  className="goTo_cgpa"
-                  onClick={() => {
-                    goToCGPA();
-                  }}
-                >
-                  Back to CGPA
-                </button>
-              ) : (
-                ""
-              )}
             </div>
           </div>
         </section>
       </div>
 
-        {GPA ? <ProgressBar GPA={GPA} /> : ""}
+      {GPA ? <ProgressBar GPA={GPA} /> : ""}
     </>
   );
 };
