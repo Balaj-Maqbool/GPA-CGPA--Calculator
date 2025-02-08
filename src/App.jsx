@@ -18,7 +18,7 @@ function App() {
           path="/"
           element={
             <>
-              {/* <Navbar /> */}
+              <Navbar />
               <LowerNavbar/>
               {/* <GPA_calculator /> */}
             </>
