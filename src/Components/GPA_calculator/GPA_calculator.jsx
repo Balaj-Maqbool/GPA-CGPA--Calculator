@@ -249,15 +249,6 @@ const GPA_calculator = () => {
                         );
                       }}
                     />
-                    {/* <input
-                    className="marks_input"
-                    type="number"
-                    placeholder="Total Marks"
-                    value={sub.total_marks}
-                    onChange={(e) => {
-                      handleInputChange(sub.id, "total_marks", e.target.value);
-                    }}
-                  /> */}
                     <input
                       className="credit_hours_input"
                       type="number"
@@ -317,9 +308,8 @@ const GPA_calculator = () => {
           </div>
         </section>
       </div>
-      <div className="gpa_calculation_right">
-        {/* {GPA ? <ProgressBar GPA={GPA} /> : ""} */}
-      </div>
+
+        {GPA ? <ProgressBar GPA={GPA} /> : ""}
     </>
   );
 };

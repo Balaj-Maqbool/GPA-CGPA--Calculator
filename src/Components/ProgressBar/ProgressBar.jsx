@@ -16,7 +16,7 @@ const ProgressBar = ({ CGPA, GPA }) => {
             "0%": "#ff7f50", // Gradient start color
             "100%": "#1e90ff", // Gradient end color
           }}
-          strokeWidth={6}
+          strokeWidth={5}
           trailWidth={5}
           trailColor="#d9d9d9"
           strokeLinecap="round"
@@ -25,13 +25,13 @@ const ProgressBar = ({ CGPA, GPA }) => {
         <div
           className="circle-center"
           style={{
-            color: `rgb(${percentage * 2.5}, ${100 - percentage},230)`,
+            color: `rgb(${percentage * 2.5},${100 - percentage},230)`,
           }}
         >
           <span className="value">{value}</span>
         </div>
       </div>
-      <span className="circle-label">{name}</span>
+      <span className="circle-label">Your  {name} </span>
     </div>
   );
 };

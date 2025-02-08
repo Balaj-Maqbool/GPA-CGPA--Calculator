@@ -214,7 +214,7 @@
   @media (max-width: 400px) {
     .gpa_container ,.cgpa_container{
       padding: 20px;
-      min-width: 100%;
+      min-width: 100;
     }
   
     h3 {
