@@ -6,7 +6,6 @@ import { MdAddBox } from "react-icons/md";
 import { grade_Point_Table } from "./Grade_Point_Table.js"; // Importing the grade point table
 import ProgressBar from "../ProgressBar/ProgressBar.jsx";
 import { useLocation, useNavigate } from "react-router-dom";
-import LowerNavbar from "../Navbar/LowerNavbar.jsx";
 
 const GPA_calculator = () => {
   const [GPA, setGPA] = useState({ gpa: "", gpa_percentage: "" });
@@ -230,7 +229,6 @@ const GPA_calculator = () => {
   return (
     <>
       <div className="the_container">
-        <LowerNavbar/>
         <section className="gpa_container">
           <h3>GPA Calculator</h3>
           <div className="gpa_calculation_left">

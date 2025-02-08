@@ -130,10 +130,7 @@
   .navbar_title {
     font-size: 1.4rem;
   }
-  .lower-navbar {
-    height: 5vh;
-    /* top: 11vh; */
-  }
+  
 }
 
 /* 🔸 Mobile Portrait (≤ 575px) */
@@ -151,17 +148,6 @@
   .left {
     display: none;
   }
-  .lower-navbar {
-    height: 4vh;
-  }
-  .slash {
-    font-size: 1.3rem;
-    margin: 0 6px;
-  }
-  .lower-navbar .navbar_links a {
-    font-size: 1rem;
-    padding: 6px 12px;
-  }
 }
 
 /* 🔸 Extra Small Screens (≤ 400px) */
@@ -177,16 +163,5 @@
   .right {
     right: 2rem;
   }
-  .lower-navbar {
-    height: 3.8vh;
-    width: 70vh;
-  }
-  .slash {
-    font-size: 1.2rem;
-    margin: 0 4px;
-  }
-  .lower-navbar .navbar_links a {
-    font-size: 0.9rem;
-    padding: 5px 10px;
-  }
+
 }

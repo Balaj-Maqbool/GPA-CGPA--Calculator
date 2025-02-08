@@ -5,7 +5,6 @@ import { ImCross } from "react-icons/im";
 import { MdAddBox } from "react-icons/md";
 import ProgressBar from "../ProgressBar/ProgressBar";
 import { useLocation, useNavigate } from "react-router-dom";
-import LowerNavbar from "../Navbar/LowerNavbar";
 
 const CGPA = () => {
   const [CGPA, setCGPA] = useState({});
@@ -142,7 +141,6 @@ const CGPA = () => {
   return (
     <>
       <div className="the_container">
-        <LowerNavbar/>
         <section className="cgpa_container">
           <h3>CGPA Calculator</h3>
           <div className="cgpa_calculation_left">
